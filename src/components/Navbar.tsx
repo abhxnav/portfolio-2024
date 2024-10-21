@@ -10,6 +10,7 @@ const Navbar = () => {
       variants={navVariants}
       initial="hidden"
       whileInView="show"
+      viewport={{ once: true }}
       className="sm:px-16 px-6 py-8 relative"
     >
       <div className="absolute w-1/2 inset-0 gradient-main" />
@@ -21,7 +22,7 @@ const Navbar = () => {
           height={24}
         />
 
-        <h2 className="font-extrabold text-2xl font-baloo">PORTFOLIO</h2>
+        <h2 className="font-extrabold text-2xl">PORTFOLIO</h2>
 
         <Image src="/assets/icons/menu.svg" alt="menu" width={24} height={24} />
       </div>

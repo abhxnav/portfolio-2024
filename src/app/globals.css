@@ -54,6 +54,56 @@ body {
   filter: blur(2px) brightness(0.4);
 }
 
+.gradient-about {
+  position: absolute;
+  width: 200px;
+  height: 438px;
+  top: 0px;
+  right: 0px;
+  background-image: linear-gradient(270deg,
+      hsl(340deg 76% 70%) 0%,
+      /* Bright Pink */
+      hsl(320deg 70% 80%) 26%,
+      /* Soft Pink */
+      hsl(290deg 70% 85%) 39%,
+      /* Pale Purple */
+      hsl(240deg 70% 90%) 50%,
+      /* Light Blue */
+      hsl(200deg 70% 85%) 61%,
+      /* Soft Sky Blue */
+      hsl(250deg 65% 70%) 74%,
+      /* Muted Violet */
+      hsl(300deg 76% 70%) 100%
+      /* Pinkish Purple */
+    );
+  filter: blur(190px);
+}
+
+.gradient-explore {
+  position: absolute;
+  width: 404px;
+  height: 800px;
+  left: 20%;
+  top: 5%;
+  background-image: linear-gradient(270deg,
+      hsl(340deg 76% 70%) 0%,
+      /* Bright Pink */
+      hsl(320deg 70% 80%) 26%,
+      /* Soft Pink */
+      hsl(290deg 70% 85%) 39%,
+      /* Pale Purple */
+      hsl(240deg 70% 90%) 50%,
+      /* Light Blue */
+      hsl(200deg 70% 85%) 61%,
+      /* Soft Sky Blue */
+      hsl(250deg 65% 70%) 74%,
+      /* Muted Violet */
+      hsl(300deg 76% 70%) 100%
+      /* Pinkish Purple */
+    );
+  filter: blur(175px) brightness(0.3);
+  transform: rotate(-114.2deg);
+}
 
 @layer utilities {
   .text-balance {

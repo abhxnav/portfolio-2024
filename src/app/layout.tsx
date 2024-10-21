@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${fontBaloo.variable} ${fontRoboto.variable} font-roboto bg-dark-700 text-dark-200 antialiased`}
+        className={`${fontBaloo.variable} ${fontRoboto.variable} font-baloo bg-dark-700 text-dark-200 antialiased`}
       >
         {children}
       </body>

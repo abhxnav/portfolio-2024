@@ -19,13 +19,13 @@ const Hero = () => {
         <div className="flex flex-col relative z-10">
           <motion.h1
             variants={textVariant(1.1)}
-            className="font-bold lg:text-9xl md:text-7xl sm:text-5xl text-4xl uppercase text-dark-200 font-baloo"
+            className="font-bold lg:text-9xl md:text-7xl sm:text-5xl text-4xl uppercase text-dark-200"
           >
             Abhinav
           </motion.h1>
           <motion.h1
             variants={textVariant(1.4)}
-            className="font-bold lg:text-4xl md:text-xl sm:text-base text-xs leading-none text-dark-200 font-baloo"
+            className="font-bold lg:text-4xl md:text-xl sm:text-base text-xs leading-none text-dark-200"
           >
             Software Developer
           </motion.h1>

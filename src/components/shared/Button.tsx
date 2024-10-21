@@ -18,7 +18,7 @@ const Button = ({ text, onClick, className, iconSrc }: ButtonProps) => {
         <span className="relative z-10">
           <Image src={iconSrc!} alt={text} width={28} height={28} />
         </span>
-        <span className="relative z-10 font-baloo">{text}</span>
+        <span className="relative z-10">{text}</span>
       </div>
     </button>
   )
