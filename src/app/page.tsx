@@ -1,4 +1,4 @@
-import { About, Hero, Navbar } from '@/components'
+import { About, Hero, Navbar, Projects } from '@/components'
 
 const Home = () => {
   return (
@@ -8,6 +8,7 @@ const Home = () => {
       <div className="relative">
         <About />
         <div className="gradient-explore z-0" />
+        <Projects />
       </div>
     </div>
   )
