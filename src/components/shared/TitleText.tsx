@@ -2,7 +2,7 @@ import { textVariant2 } from '@/lib/motion'
 import { motion } from 'framer-motion'
 
 interface TitleTextProps {
-  title: string
+  title: string | JSX.Element
   textStyles?: string
 }
 

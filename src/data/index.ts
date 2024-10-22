@@ -30,3 +30,39 @@ export const projects = [
     imgUrl: '/assets/pictures/project1.jpg',
   },
 ]
+
+export const workExperience = [
+  {
+    id: 'exp-1',
+    role: 'Frontend Developer',
+    company: 'Experience 1',
+    duration: 'Jan 2022 - Present',
+    description: [
+      `**Developed** and maintained web applications using React, Next.js, and TypeScript, resulting in a 20% increase in application performance and a 30% reduction in development time.`,
+      'Collaborated with cross-functional teams to design and develop high-quality web applications using React, Next.js, and TypeScript.',
+      'Built and deployed web applications using React, Next.js, and TypeScript, resulting in a 20% increase in application performance and a 30% reduction in development time.',
+    ],
+  },
+  {
+    id: 'exp-2',
+    role: 'Frontend Developer',
+    company: 'Experience 2',
+    duration: 'Jan 2022 - Present',
+    description: [
+      'Developed and maintained web applications using React, Next.js, and TypeScript, resulting in a 20% increase in application performance and a 30% reduction in development time.',
+      'Collaborated with cross-functional teams to design and develop high-quality web applications using React, Next.js, and TypeScript.',
+      'Built and deployed web applications using React, Next.js, and TypeScript, resulting in a 20% increase in application performance and a 30% reduction in development time.',
+    ],
+  },
+  {
+    id: 'exp-3',
+    role: 'Frontend Developer',
+    company: 'Experience 3',
+    duration: 'Jan 2022 - Present',
+    description: [
+      'Developed and maintained web applications using React, Next.js, and TypeScript, resulting in a 20% increase in application performance and a 30% reduction in development time.',
+      'Collaborated with cross-functional teams to design and develop high-quality web applications using React, Next.js, and TypeScript.',
+      'Built and deployed web applications using React, Next.js, and TypeScript, resulting in a 20% increase in application performance and a 30% reduction in development time.',
+    ],
+  },
+]
