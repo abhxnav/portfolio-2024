@@ -22,21 +22,24 @@ const World = () => {
 
         <motion.div
           variants={fadeIn('up', 'tween', 0.3, 1)}
-          className="relative mt-16 flex w-full h-[500px]"
+          className="relative mt-16 flex w-full"
         >
-          <Image
-            src="/assets/pictures/map.png"
-            alt="map"
-            height={5000}
-            width={5000}
-            className="h-full w-full object-cover"
-          />
+          {/* Responsive image */}
+          <div className="relative w-full h-0 pb-[50%]">
+            <Image
+              src="/assets/pictures/map.png"
+              alt="map"
+              layout="fill"
+              objectFit="cover"
+              className="absolute inset-0"
+            />
+          </div>
 
           {/* Avatars */}
           <>
             <motion.div
               variants={renderVariants('right')}
-              className="absolute bottom-20 right-24 w-12 h-12 p-1 rounded-full border-2 border-dark-300"
+              className="absolute bottom-[20%] right-[3%] w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 p-1 rounded-full border-2 border-dark-300"
             >
               <span className="absolute inset-0 z-0 button-gradient rounded-full" />
               <Image
@@ -47,9 +50,10 @@ const World = () => {
                 className="w-full h-full object-contain z-10 relative"
               />
             </motion.div>
+
             <motion.div
               variants={renderVariants('left')}
-              className="absolute top-10 left-48 w-12 h-12 p-1 rounded-full border-2 border-dark-300"
+              className="absolute top-[12%] left-[12%] w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 p-1 rounded-full border-2 border-dark-300"
             >
               <span className="absolute inset-0 z-0 button-gradient rounded-full" />
               <Image
@@ -60,9 +64,10 @@ const World = () => {
                 className="w-full h-full object-contain z-10 relative"
               />
             </motion.div>
+
             <motion.div
               variants={renderVariants('left')}
-              className="absolute top-24 left-28 w-12 h-12 p-1 rounded-full border-2 border-dark-300"
+              className="absolute top-[25%] left-[5%] w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 p-1 rounded-full border-2 border-dark-300"
             >
               <span className="absolute inset-0 z-0 button-gradient rounded-full" />
               <Image
@@ -73,9 +78,10 @@ const World = () => {
                 className="w-full h-full object-contain z-10 relative"
               />
             </motion.div>
+
             <motion.div
               variants={renderVariants('right')}
-              className="absolute top-10 left-[550px] w-12 h-12 p-1 rounded-full border-2 border-dark-300"
+              className="absolute top-[15%] left-[40%] w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 p-1 rounded-full border-2 border-dark-300"
             >
               <span className="absolute inset-0 z-0 button-gradient rounded-full" />
               <Image
@@ -86,9 +92,10 @@ const World = () => {
                 className="w-full h-full object-contain z-10 relative"
               />
             </motion.div>
+
             <motion.div
               variants={renderVariants('right')}
-              className="absolute top-36 right-[470px] w-12 h-12 p-1 rounded-full border-2 border-dark-300"
+              className="absolute top-[32%] right-[35%] w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 p-1 rounded-full border-2 border-dark-300"
             >
               <span className="absolute inset-0 z-0 button-gradient rounded-full" />
               <Image
@@ -99,9 +106,10 @@ const World = () => {
                 className="w-full h-full object-contain z-10 relative"
               />
             </motion.div>
+
             <motion.div
               variants={renderVariants('right')}
-              className="absolute top-48 right-[420px] w-12 h-12 p-1 rounded-full border-2 border-dark-300"
+              className="absolute top-[38%] right-[32%] w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 p-1 rounded-full border-2 border-dark-300"
             >
               <span className="absolute inset-0 z-0 button-gradient rounded-full" />
               <Image

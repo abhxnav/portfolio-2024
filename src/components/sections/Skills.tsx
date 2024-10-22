@@ -1,14 +1,14 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { fadeIn } from '@/lib/motion'
+import { fadeIn, staggerContainer } from '@/lib/motion'
 import { SkillItems, TypingEffect } from '@/components'
 
 const Skills = () => {
   return (
     <section className="sm:p-16 xs:p-8 px-6 py-12 relative z-10">
       <motion.div
-        variants={fadeIn('up', 'tween', 0.3, 1)}
+        variants={staggerContainer(0.2, 1)}
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
