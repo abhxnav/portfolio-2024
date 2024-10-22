@@ -1,4 +1,12 @@
-import { About, Hero, Navbar, Projects, WorkExperience } from '@/components'
+import {
+  About,
+  Hero,
+  Navbar,
+  Projects,
+  Skills,
+  WorkExperience,
+  World,
+} from '@/components'
 
 const Home = () => {
   return (
@@ -13,7 +21,10 @@ const Home = () => {
       <div className="relative">
         <WorkExperience />
         <div className="gradient-exp z-0" />
+        {/* TODO: Add skills section */}
+        <Skills />
       </div>
+      <World />
     </div>
   )
 }

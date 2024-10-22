@@ -18,7 +18,7 @@ const Projects = () => {
         viewport={{ once: false, amount: 0.25 }}
         className="flex flex-col lg:w-[80%] w-full mx-auto"
       >
-        <TypingEffect title="| Projects" />
+        <TypingEffect title="| Projects" textStyles="text-center" />
         {/* <TitleText title="" /> */}
 
         <div className="mt-12 flex lg:flex-row flex-col min-h-[70vh] gap-5">

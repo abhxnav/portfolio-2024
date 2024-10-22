@@ -1,8 +1,11 @@
+export { default as Hero } from '@/components/sections/Hero'
+export { default as About } from '@/components/sections/About'
+export { default as Projects } from '@/components/sections/Projects'
+export { default as WorkExperience } from '@/components/sections/WorkExperience'
+export { default as Skills } from '@/components/sections/Skills'
+export { default as World } from '@/components/sections/World'
+
 export { default as Navbar } from '@/components/Navbar'
-export { default as Hero } from '@/components/Hero'
-export { default as About } from '@/components/About'
-export { default as Projects } from '@/components/Projects'
-export { default as WorkExperience } from '@/components/WorkExperience'
 export { default as ProjectCard } from '@/components/ProjectCard'
 export { default as ExperiencePoint } from '@/components/ExperiencePoint'
 

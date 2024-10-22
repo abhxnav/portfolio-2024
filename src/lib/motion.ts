@@ -118,8 +118,8 @@ export const fadeIn = (
 
 export const renderVariants = (direction: string) => ({
   hidden: {
-    x: direction === 'left' ? '-100%' : '100%',
-    rotate: 120,
+    x: direction === 'left' ? '-500%' : '500%',
+    rotate: 180,
   },
   show: {
     x: 0,

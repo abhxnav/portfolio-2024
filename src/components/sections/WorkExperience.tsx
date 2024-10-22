@@ -3,10 +3,10 @@
 import { fadeIn, renderVariants, staggerContainer } from '@/lib/motion'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import TypingEffect from './shared/TypingEffect'
-import TitleText from './shared/TitleText'
+import TypingEffect from '../shared/TypingEffect'
+import TitleText from '../shared/TitleText'
 import { workExperience } from '@/data'
-import ExperiencePoint from './ExperiencePoint'
+import ExperiencePoint from '../ExperiencePoint'
 
 const WorkExperience = () => {
   return (
