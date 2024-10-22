@@ -8,6 +8,7 @@ export { default as World } from '@/components/sections/World'
 export { default as Navbar } from '@/components/Navbar'
 export { default as ProjectCard } from '@/components/ProjectCard'
 export { default as ExperiencePoint } from '@/components/ExperiencePoint'
+export { default as SkillItems } from '@/components/SkillItems'
 
 export { default as Button } from '@/components/shared/Button'
 export { default as TypingEffect } from '@/components/shared/TypingEffect'

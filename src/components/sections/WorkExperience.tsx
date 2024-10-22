@@ -34,7 +34,7 @@ const WorkExperience = () => {
           variants={fadeIn('left', 'tween', 0.2, 1)}
           className="flex justify-center flex-col flex-1"
         >
-          <TypingEffect title="| My Past Work Experience" />
+          <TypingEffect title="| Work Experience" />
           <div className="flex flex-col gap-6 mt-8">
             {workExperience?.map((exp, idx) => (
               <ExperiencePoint key={exp.id} {...exp} />

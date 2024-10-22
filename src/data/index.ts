@@ -66,3 +66,62 @@ export const workExperience = [
     ],
   },
 ]
+
+export const skills = [
+  {
+    skill: 'React',
+    iconUrl: '/assets/icons/skills/react.svg',
+  },
+  {
+    skill: 'React',
+    iconUrl: '/assets/icons/skills/react.svg',
+  },
+  {
+    skill: 'React',
+    iconUrl: '/assets/icons/skills/react.svg',
+  },
+  {
+    skill: 'React',
+    iconUrl: '/assets/icons/skills/react.svg',
+  },
+  {
+    skill: 'React',
+    iconUrl: '/assets/icons/skills/react.svg',
+  },
+  {
+    skill: 'React',
+    iconUrl: '/assets/icons/skills/react.svg',
+  },
+  {
+    skill: 'React',
+    iconUrl: '/assets/icons/skills/react.svg',
+  },
+  {
+    skill: 'React',
+    iconUrl: '/assets/icons/skills/react.svg',
+  },
+  {
+    skill: 'React',
+    iconUrl: '/assets/icons/skills/react.svg',
+  },
+  {
+    skill: 'React',
+    iconUrl: '/assets/icons/skills/react.svg',
+  },
+  {
+    skill: 'React',
+    iconUrl: '/assets/icons/skills/react.svg',
+  },
+  {
+    skill: 'React',
+    iconUrl: '/assets/icons/skills/react.svg',
+  },
+  {
+    skill: 'React',
+    iconUrl: '/assets/icons/skills/react.svg',
+  },
+  {
+    skill: 'React',
+    iconUrl: '/assets/icons/skills/react.svg',
+  },
+]

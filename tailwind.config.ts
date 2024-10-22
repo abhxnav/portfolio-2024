@@ -21,6 +21,20 @@ const config: Config = {
           200: '#E5E7EB ',
         },
       },
+      keyframes: {
+        'right-to-left': {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        'left-to-right': {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0%)' },
+        },
+      },
+      animation: {
+        'right-to-left': 'right-to-left 1s linear infinite',
+        'left-to-right': 'left-to-right 1s linear infinite',
+      },
     },
     fontFamily: {
       roboto: ['var(--font-roboto)', 'sans-serif'],
