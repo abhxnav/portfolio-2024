@@ -4,6 +4,7 @@ export { default as Projects } from '@/components/sections/Projects'
 export { default as WorkExperience } from '@/components/sections/WorkExperience'
 export { default as Skills } from '@/components/sections/Skills'
 export { default as World } from '@/components/sections/World'
+export { default as Contact } from '@/components/sections/Contact'
 
 export { default as Navbar } from '@/components/Navbar'
 export { default as ProjectCard } from '@/components/ProjectCard'

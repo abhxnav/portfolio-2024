@@ -1,5 +1,6 @@
 import {
   About,
+  Contact,
   Hero,
   Navbar,
   Projects,
@@ -21,10 +22,14 @@ const Home = () => {
       <div className="relative">
         <WorkExperience />
         <div className="gradient-exp z-0" />
-        {/* TODO: Add skills section */}
         <Skills />
       </div>
       <World />
+      <div className="relative">
+        <Contact />
+        <div className="gradient-exp z-0" />
+        {/* <Testimonial /> */}
+      </div>
     </div>
   )
 }
