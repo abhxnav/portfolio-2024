@@ -125,3 +125,26 @@ export const skills = [
     iconUrl: '/assets/icons/skills/react.svg',
   },
 ]
+
+export const socials = [
+  {
+    id: 'github',
+    url: 'https://github.com',
+    iconUrl: '/assets/icons/github.svg',
+  },
+  {
+    id: 'github',
+    url: 'https://github.com',
+    iconUrl: '/assets/icons/github.svg',
+  },
+  {
+    id: 'github',
+    url: 'https://github.com',
+    iconUrl: '/assets/icons/github.svg',
+  },
+  {
+    id: 'github',
+    url: 'https://github.com',
+    iconUrl: '/assets/icons/github.svg',
+  },
+]

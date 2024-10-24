@@ -1,6 +1,7 @@
 import {
   About,
   Contact,
+  Footer,
   Hero,
   Navbar,
   Projects,
@@ -27,9 +28,10 @@ const Home = () => {
       <World />
       <div className="relative">
         <Contact />
-        <div className="gradient-exp z-0" />
+        <div className="gradient-contact z-0" />
         {/* <Testimonial /> */}
       </div>
+      <Footer />
     </div>
   )
 }
