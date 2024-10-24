@@ -1,10 +1,8 @@
 'use client'
 
-import { fadeIn, renderVariants, staggerContainer } from '@/lib/motion'
+import { fadeIn, staggerContainer } from '@/lib/motion'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import TypingEffect from '../shared/TypingEffect'
-import TitleText from '../shared/TitleText'
 import { workExperience } from '@/data'
 import ExperiencePoint from '../ExperiencePoint'
 
@@ -16,28 +14,23 @@ const WorkExperience = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className="2xl:max-w-[1280px] w-full mx-auto flex lg:flex-row flex-col gap-40"
+        className="2xl:max-w-[1280px] w-full mx-auto flex flex-col items-center"
       >
+        <TypingEffect title="| Work Experience" textStyles="text-center" />
+
         <motion.div
-          variants={renderVariants('left')}
-          className="flex items-center justify-center flex-[0.5]"
+          variants={fadeIn('up', 'tween', 0.3, 1)}
+          className="relative mt-16 flex w-full"
         >
-          <Image
-            src="/assets/icons/globe.svg"
-            alt="globe"
-            width={1}
-            height={1}
-            className="w-full h-full object-contain"
-          />
-        </motion.div>
-        <motion.div
-          variants={fadeIn('left', 'tween', 0.2, 1)}
-          className="flex justify-center flex-col flex-1"
-        >
-          <TypingEffect title="| Work Experience" />
-          <div className="flex flex-col gap-6 mt-8">
+          <div className="flex flex-col gap-6 mt-8 w-full relative">
+            {/* Timeline */}
+            <div className="absolute inset-0 flex items-center lg:justify-center">
+              <div className="w-0.5 h-full bg-dark-400" />
+            </div>
+
+            {/* Experience Points */}
             {workExperience?.map((exp, idx) => (
-              <ExperiencePoint key={exp.id} {...exp} />
+              <ExperiencePoint key={exp.id} {...exp} index={idx} />
             ))}
           </div>
         </motion.div>
