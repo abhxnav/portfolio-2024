@@ -13,8 +13,11 @@ import {
 const Home = () => {
   return (
     <div>
-      <Navbar />
-      <Hero />
+      <div className="relative">
+        <Navbar />
+        <div className="gradient-main z-0" />
+        <Hero />
+      </div>
       <div className="relative">
         <About />
         <div className="gradient-projects z-0" />

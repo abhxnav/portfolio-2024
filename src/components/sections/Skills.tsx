@@ -17,7 +17,7 @@ const Skills = () => {
 
   return (
     <section
-      className="sm:p-16 xs:p-8 px-6 py-12 relative z-10 scroll-mt-14"
+      className="sm:p-16 xs:p-8 px-6 py-12 relative z-10 scroll-mt-14 min-h-screen flex items-center justify-center"
       id="skills"
       ref={ref}
     >

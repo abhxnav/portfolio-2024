@@ -14,10 +14,11 @@ const Projects = () => {
 
   return (
     <section
-      className="sm:p-16 xs:p-8 px-6 py-12 scroll-mt-14"
+      className="sm:p-16 xs:p-8 px-6 py-12 scroll-mt-14 min-h-screen flex items-center justify-center"
       id="projects"
       ref={ref}
     >
+      <div className="gradient-about z-0" />
       <motion.div
         variants={staggerContainer(0.2, 1)}
         initial="hidden"

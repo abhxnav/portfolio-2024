@@ -12,7 +12,7 @@ const Hero = () => {
 
   return (
     <section
-      className="py-12 sm:py-16 xs:py-8 pl-6 sm:pl-16 text-dark-200 scroll-mt-[100vh]"
+      className="py-12 sm:py-16 xs:py-8 pl-6 sm:pl-16 text-dark-200 scroll-mt-[100vh] min-h-screen flex items-center justify-center"
       id="home"
       ref={ref}
     >

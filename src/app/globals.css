@@ -30,7 +30,12 @@ body {
 .gradient-main {
   @apply shared-gradient;
 
-  filter: blur(125px);
+  position: absolute;
+  width: 50%;
+  height: 200px;
+  left: 10%;
+  top: 0;
+  filter: blur(150px) brightness(0.6);
 }
 
 .button-gradient {
