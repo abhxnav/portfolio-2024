@@ -8,14 +8,15 @@ import Download from '@/../public/assets/icons/download.svg'
 import useSectionInView from '@/hooks/useSectionInView'
 import Link from 'next/link'
 import { socials } from '@/data'
-import Image from 'next/image'
+import Lottie from 'lottie-react'
+import DesktopAnimation from '@/../public/assets/animations/desktop.json'
 
 const Hero = () => {
   const { ref } = useSectionInView('Home')
 
   return (
     <section
-      className="py-12 sm:py-16 xs:py-8 pl-6 sm:pl-16 text-dark-200 scroll-mt-[100vh] min-h-screen flex items-center justify-center"
+      className="py-12 sm:py-16 xs:py-8 pl-6 sm:pl-16 text-dark-200 min-h-screen flex items-center justify-center"
       id="home"
       ref={ref}
     >
@@ -24,9 +25,9 @@ const Hero = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className="flex items-center justify-between mx-auto 2xl:max-w-[1280px] w-full"
+        className="flex flex-col-reverse lg:flex-row items-center justify-between mx-auto 2xl:max-w-[1280px] w-full"
       >
-        <div className="flex flex-col relative z-10">
+        <div className="flex flex-col text-center lg:text-left relative z-10">
           <motion.h3
             variants={textVariant(0.8)}
             className="font-bold lg:text-4xl md:text-xl sm:text-base text-xs leading-none text-dark-200"
@@ -83,15 +84,11 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* TODO: Add a 3d model here */}
-        {/* <div>
-          <motion.div
-            variants={slideIn('right', 'tween', 0.2, 1)}
-            className="relative w-full md:-mt-5 -mt-3"
-          >
-            <div>ANIMATION</div>
+        <div className="lg:w-1/2 w-3/4">
+          <motion.div variants={fadeIn('left', 'tween', 0.2, 1)}>
+            <Lottie animationData={DesktopAnimation} />
           </motion.div>
-        </div> */}
+        </div>
       </motion.div>
     </section>
   )
