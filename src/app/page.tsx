@@ -23,12 +23,15 @@ const Home = () => {
       <div className="relative">
         <WorkExperience />
         <div className="gradient-exp z-0" />
+      </div>
+      <div className="relative">
         <Skills />
+        <div className="gradient-contact z-0" />
       </div>
       <World />
       <div className="relative">
         <Contact />
-        <div className="gradient-contact z-0" />
+        <div className="gradient-exp z-0" />
         {/* <Testimonial /> */}
       </div>
       <Footer />

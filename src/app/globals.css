@@ -78,7 +78,7 @@ body {
   height: 100vh;
   left: 30%;
   top: 10%;
-  filter: blur(200px) brightness(0.4);
+  filter: blur(200px) brightness(0.3);
   transform: rotate(-53.13deg);
 }
 
@@ -90,7 +90,7 @@ body {
   height: 100vh;
   right: 30%;
   top: 10%;
-  filter: blur(200px) brightness(0.4);
+  filter: blur(200px) brightness(0.3);
   transform: rotate(53.13deg);
 }
 
