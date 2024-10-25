@@ -1,11 +1,14 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { staggerContainer, textVariant } from '@/lib/motion'
-import Link from 'next/link'
+import { fadeIn, staggerContainer, textVariant } from '@/lib/motion'
 import { Button } from '@/components'
-import Explore from '@/../public/assets/icons/mouse.svg'
+import Send from '@/../public/assets/icons/send.svg'
+import Download from '@/../public/assets/icons/download.svg'
 import useSectionInView from '@/hooks/useSectionInView'
+import Link from 'next/link'
+import { socials } from '@/data'
+import Image from 'next/image'
 
 const Hero = () => {
   const { ref } = useSectionInView('Home')
@@ -24,26 +27,59 @@ const Hero = () => {
         className="flex items-center justify-between mx-auto 2xl:max-w-[1280px] w-full"
       >
         <div className="flex flex-col relative z-10">
+          <motion.h3
+            variants={textVariant(0.8)}
+            className="font-bold lg:text-4xl md:text-xl sm:text-base text-xs leading-none text-dark-200"
+          >
+            Hey! I'm
+          </motion.h3>
           <motion.h1
             variants={textVariant(1.1)}
-            className="font-bold lg:text-9xl md:text-7xl sm:text-5xl text-4xl uppercase text-dark-200"
+            className="font-bold lg:text-8xl md:text-6xl sm:text-4xl text-3xl uppercase text-dark-200"
           >
-            Abhinav
+            Abhinav,
           </motion.h1>
-          <motion.h1
+          <motion.h3
             variants={textVariant(1.4)}
             className="font-bold lg:text-4xl md:text-xl sm:text-base text-xs leading-none text-dark-200"
           >
-            Software Developer
-          </motion.h1>
+            A Software Developer
+          </motion.h3>
 
           <motion.div
-            variants={textVariant(1.6)}
-            className="mt-8 hidden lg:flex"
+            variants={textVariant(1.4)}
+            className="lg:mt-4 md:mt-3 sm:mt-3 mt-1 flex gap-2 items-center"
           >
-            <Link href="#explore">
-              <Button text="Explore more about me" iconSrc={Explore} />
-            </Link>
+            <motion.div variants={fadeIn('right', 'spring', 1.5, 1)}>
+              <Link href="#contact">
+                <Button text="Get in touch" iconSrc={Send} />
+              </Link>
+            </motion.div>
+            {socials.map((social, idx) => (
+              <motion.div
+                variants={fadeIn('right', 'spring', 1.5 + 0.2 * idx, 1)}
+                className="flex gap-2"
+              >
+                <Button
+                  key={social.id}
+                  iconSrc={social.iconUrl}
+                  noGradient
+                  className="lg:px-[12px] md:px-[8px] sm:px-[4px] px-[4px] border-2 border-dark-500"
+                />
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div
+            variants={fadeIn('right', 'spring', 2, 1)}
+            className="lg:mt-4 md:mt-3 sm:mt-3 mt-1"
+          >
+            <Button
+              text="Download CV"
+              iconSrc={Download}
+              className="bg-transparent border-2 border-dark-500 w-full"
+              noGradient
+            />
           </motion.div>
         </div>
 
