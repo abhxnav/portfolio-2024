@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { staggerContainer } from '@/lib/motion'
 import { motion } from 'framer-motion'
-import { ProjectCard, TitleText, TypingEffect } from '@/components'
+import { ProjectCard, TypingEffect } from '@/components'
 import { projects } from '@/data'
 
 const Projects = () => {
@@ -19,7 +19,6 @@ const Projects = () => {
         className="flex flex-col lg:w-[80%] w-full mx-auto"
       >
         <TypingEffect title="| Projects" textStyles="text-center" />
-        {/* <TitleText title="" /> */}
 
         <div className="mt-12 flex lg:flex-row flex-col min-h-[70vh] gap-5">
           {projects?.map((project, index) => (

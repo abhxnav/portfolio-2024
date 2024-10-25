@@ -21,7 +21,7 @@ const TypingEffect = ({
   const [isRotated, setIsRotated] = useState(false)
 
   return (
-    <div className="flex gap-4 items-center">
+    <div className={`${type === 'skills' ? 'flex gap-4 items-center' : ''}`}>
       <motion.p
         variants={textContainer}
         className={`font-normal text-3xl text-dark-300 ${textStyles}`}
