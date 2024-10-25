@@ -18,20 +18,20 @@ const Home = () => {
       <div className="relative">
         <About />
         <div className="gradient-projects z-0" />
+        <Skills />
+      </div>
+      <div className="relative">
         <Projects />
+        {/* <div className="gradient-exp z-0" /> */}
       </div>
       <div className="relative">
         <WorkExperience />
         <div className="gradient-exp z-0" />
       </div>
-      <div className="relative">
-        <Skills />
-        <div className="gradient-contact z-0" />
-      </div>
       <World />
       <div className="relative">
         <Contact />
-        <div className="gradient-exp z-0" />
+        <div className="gradient-contact z-0" />
         {/* <Testimonial /> */}
       </div>
       <Footer />

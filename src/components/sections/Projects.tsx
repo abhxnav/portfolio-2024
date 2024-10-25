@@ -5,12 +5,19 @@ import { staggerContainer } from '@/lib/motion'
 import { motion } from 'framer-motion'
 import { ProjectCard, TypingEffect } from '@/components'
 import { projects } from '@/data'
+import useSectionInView from '@/hooks/useSectionInView'
 
 const Projects = () => {
+  const { ref } = useSectionInView('Projects')
+
   const [active, setActive] = useState<string>('project-2')
 
   return (
-    <section className="sm:p-16 xs:p-8 px-6 py-12">
+    <section
+      className="sm:p-16 xs:p-8 px-6 py-12 scroll-mt-14"
+      id="projects"
+      ref={ref}
+    >
       <motion.div
         variants={staggerContainer(0.2, 1)}
         initial="hidden"

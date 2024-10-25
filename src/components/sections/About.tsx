@@ -4,10 +4,17 @@ import { fadeIn, staggerContainer } from '@/lib/motion'
 import { motion } from 'framer-motion'
 import { TypingEffect } from '@/components'
 import Image from 'next/image'
+import useSectionInView from '@/hooks/useSectionInView'
 
 const About = () => {
+  const { ref } = useSectionInView('About')
+
   return (
-    <section className="sm:p-16 xs:p-8 px-6 py-12 relative z-10 text-dark-200">
+    <section
+      className="sm:p-16 xs:p-8 px-6 py-12 relative z-10 text-dark-200 scroll-mt-14"
+      id="about"
+      ref={ref}
+    >
       <div className="gradient-about z-0" />
       <motion.div
         variants={staggerContainer(0.2, 1)}
@@ -20,7 +27,7 @@ const About = () => {
 
         <motion.p
           variants={fadeIn('up', 'tween', 1.5, 1)}
-          className="mt-4 sm:text-3xl text-xl text-justify sm:text-center text-dark-300"
+          className="mt-4 sm:text-2xl lg:text-3xl text-xl text-justify sm:text-center text-dark-300"
         >
           I'm a Software Developer with 2+ years of experience, specializing in{' '}
           <span className="font-extrabold text-white">

@@ -7,7 +7,10 @@ import Image from 'next/image'
 
 const World = () => {
   return (
-    <section className="sm:p-16 xs:p-8 px-6 py-12 relative z-10">
+    <section
+      className="sm:p-16 xs:p-8 px-6 py-12 relative z-10 scroll-mt-14"
+      id="world"
+    >
       <motion.div
         variants={staggerContainer(0.2, 1)}
         initial="hidden"

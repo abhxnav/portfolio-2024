@@ -1,11 +1,14 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { fadeIn, staggerContainer } from '@/lib/motion'
 import { SkillItems, TypingEffect } from '@/components'
-import { useState } from 'react'
+import useSectionInView from '@/hooks/useSectionInView'
 
 const Skills = () => {
+  const { ref } = useSectionInView('Skills')
+
   const [skillsStyle, setSkillsStyle] = useState<'stripe' | 'grid'>('stripe')
 
   const switchSkillsStyle = () => {
@@ -13,7 +16,11 @@ const Skills = () => {
   }
 
   return (
-    <section className="sm:p-16 xs:p-8 px-6 py-12 relative z-10">
+    <section
+      className="sm:p-16 xs:p-8 px-6 py-12 relative z-10 scroll-mt-14"
+      id="skills"
+      ref={ref}
+    >
       <motion.div
         variants={staggerContainer(0.2, 1)}
         initial="hidden"

@@ -5,10 +5,17 @@ import { motion } from 'framer-motion'
 import TypingEffect from '../shared/TypingEffect'
 import { workExperience } from '@/data'
 import ExperiencePoint from '../ExperiencePoint'
+import useSectionInView from '@/hooks/useSectionInView'
 
 const WorkExperience = () => {
+  const { ref } = useSectionInView('Experience')
+
   return (
-    <section className="sm:p-16 xs:p-8 px-6 py-12 relative z-10">
+    <section
+      className="sm:p-16 xs:p-8 px-6 py-12 relative z-10 scroll-mt-14"
+      id="experience"
+      ref={ref}
+    >
       <motion.div
         variants={staggerContainer(0.2, 1)}
         initial="hidden"

@@ -1,14 +1,21 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { slideIn, staggerContainer, textVariant } from '@/lib/motion'
+import { staggerContainer, textVariant } from '@/lib/motion'
 import Link from 'next/link'
 import { Button } from '@/components'
 import Explore from '@/../public/assets/icons/mouse.svg'
+import useSectionInView from '@/hooks/useSectionInView'
 
 const Hero = () => {
+  const { ref } = useSectionInView('Home')
+
   return (
-    <section className="py-12 sm:py-16 xs:py-8 pl-6 sm:pl-16 text-dark-200">
+    <section
+      className="py-12 sm:py-16 xs:py-8 pl-6 sm:pl-16 text-dark-200 scroll-mt-[100vh]"
+      id="home"
+      ref={ref}
+    >
       <motion.div
         variants={staggerContainer(0.2, 1)}
         initial="hidden"

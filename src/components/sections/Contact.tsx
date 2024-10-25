@@ -1,11 +1,14 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { fadeIn, staggerContainer } from '@/lib/motion'
 import TypingEffect from '../shared/TypingEffect'
 import { Resolver, useForm } from 'react-hook-form'
 import emailjs from '@emailjs/browser'
+import { useInView } from 'react-intersection-observer'
+import { useActiveSectionContext } from '@/context/ActiveSectionContext'
+import useSectionInView from '@/hooks/useSectionInView'
 
 type ContactFormValues = {
   name: string
@@ -50,6 +53,8 @@ const resolver: Resolver<ContactFormValues> = async (values) => {
 }
 
 const Contact = () => {
+  const { ref } = useSectionInView('Contact')
+
   const [loading, setLoading] = useState<boolean>(false)
 
   const {
@@ -91,7 +96,11 @@ const Contact = () => {
   })
 
   return (
-    <section className="sm:p-16 xs:p-8 px-6 py-12 relative z-10">
+    <section
+      className="sm:p-16 xs:p-8 px-6 py-12 relative z-10 scroll-mt-14"
+      id="contact"
+      ref={ref}
+    >
       <motion.div
         variants={staggerContainer(0.2, 1)}
         initial="hidden"
