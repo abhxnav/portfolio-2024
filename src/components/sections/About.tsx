@@ -5,6 +5,8 @@ import { motion } from 'framer-motion'
 import { TypingEffect } from '@/components'
 import Image from 'next/image'
 import useSectionInView from '@/hooks/useSectionInView'
+import { parseText } from '@/lib/utils'
+import { aboutText } from '@/data'
 
 const About = () => {
   const { ref } = useSectionInView('About')
@@ -28,25 +30,8 @@ const About = () => {
         <motion.p
           variants={fadeIn('up', 'tween', 1.5, 1)}
           className="mt-4 sm:text-2xl lg:text-3xl text-xl text-justify sm:text-center text-dark-300"
-        >
-          I'm a Software Developer with 2+ years of experience, specializing in{' '}
-          <span className="font-extrabold text-white">
-            JavaScript, TypeScript, ReactJS, and NextJS
-          </span>
-          . I bring a diverse skill set, including hands-on experience in{' '}
-          <span className="font-extrabold text-white">VueJS</span>,{' '}
-          <span className="font-extrabold text-white">Svelte</span>, and
-          integrating{' '}
-          <span className="font-extrabold text-white">GraphQL APIs</span> for
-          responsive and dynamic{' '}
-          <span className="font-extrabold text-white">web applications</span>.
-          Familiar with full-stack development with{' '}
-          <span className="font-extrabold text-white">NextJS</span> and the{' '}
-          <span className="font-extrabold text-white">MERN</span> stack, I am
-          dedicated to creating intuitive and high-performance user interfaces,
-          pushing the boundaries of modern front-end development, and delivering
-          innovative digital experiences.
-        </motion.p>
+          dangerouslySetInnerHTML={{ __html: parseText(aboutText) }}
+        />
 
         <motion.div variants={fadeIn('up', 'tween', 1.6, 1)}>
           <Image
