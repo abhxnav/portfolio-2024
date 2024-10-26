@@ -1,14 +1,14 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { fadeIn, staggerContainer } from '@/lib/motion'
+import { fadeIn, slideIn, staggerContainer } from '@/lib/motion'
 import TypingEffect from '../shared/TypingEffect'
 import { Resolver, useForm } from 'react-hook-form'
 import emailjs from '@emailjs/browser'
-import { useInView } from 'react-intersection-observer'
-import { useActiveSectionContext } from '@/context/ActiveSectionContext'
 import useSectionInView from '@/hooks/useSectionInView'
+import Lottie from 'lottie-react'
+import EmailAnimation from '@/../public/assets/animations/email.json'
 
 type ContactFormValues = {
   name: string
@@ -112,86 +112,99 @@ const Contact = () => {
 
         <motion.div
           variants={fadeIn('up', 'tween', 0.2, 1)}
-          className="relative mt-16 flex w-full md:w-3/4 lg:w-1/2 border border-dark-500 rounded-3xl p-8"
+          className="relative mt-16 flex w-full flex-col lg:flex-row items-center justify-center"
         >
-          <form onSubmit={onSubmit} className="flex flex-col gap-8 w-full">
-            {/* Name Field */}
-            <div>
-              <label htmlFor="name" className="flex flex-col">
-                <span className="text-dark-200 font-medium mb-4">Name</span>
+          <motion.div
+            variants={slideIn('left', 'tween', 0.2, 1)}
+            className="w-3/4 lg:w-1/2 lg:p-16"
+          >
+            <Lottie animationData={EmailAnimation} />
+          </motion.div>
+          <motion.div
+            variants={slideIn('right', 'tween', 0.2, 1)}
+            className="w-full lg:w-1/2 border border-dark-500 rounded-3xl p-8"
+          >
+            <form onSubmit={onSubmit} className="flex flex-col gap-8 w-full">
+              {/* Name Field */}
+              <div>
+                <label htmlFor="name" className="flex flex-col">
+                  <span className="text-dark-200 font-medium mb-4">Name</span>
 
-                <input
-                  id="name"
-                  type="text"
-                  {...register('name')}
-                  placeholder="John Doe"
-                  className={`bg-dark-500 py-4 px-6 placeholder:text-dark-300 text-dark-200 rounded-lg outline-none border-none font-medium ${
-                    errors.name ? 'border-red-500' : ''
-                  }`}
-                />
-              </label>
-              {errors?.name && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.name.message}
-                </p>
-              )}
-            </div>
+                  <input
+                    id="name"
+                    type="text"
+                    {...register('name')}
+                    placeholder="John Doe"
+                    className={`bg-dark-500 py-4 px-6 placeholder:text-dark-300 text-dark-200 rounded-lg outline-none border-none font-medium ${
+                      errors.name ? 'border-red-500' : ''
+                    }`}
+                  />
+                </label>
+                {errors?.name && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.name.message}
+                  </p>
+                )}
+              </div>
 
-            {/* Email Field */}
-            <div>
-              <label htmlFor="email" className="flex flex-col">
-                <span className="text-dark-200 font-medium mb-4">Email</span>
+              {/* Email Field */}
+              <div>
+                <label htmlFor="email" className="flex flex-col">
+                  <span className="text-dark-200 font-medium mb-4">Email</span>
 
-                <input
-                  id="email"
-                  type="text"
-                  {...register('email')}
-                  placeholder="john@example.com"
-                  className={`bg-dark-500 py-4 px-6 placeholder:text-dark-300 text-dark-200 rounded-lg outline-none border-none font-medium ${
-                    errors.email ? 'border-red-500' : ''
-                  }`}
-                />
-              </label>
-              {errors?.email && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.email.message}
-                </p>
-              )}
-            </div>
+                  <input
+                    id="email"
+                    type="text"
+                    {...register('email')}
+                    placeholder="john@example.com"
+                    className={`bg-dark-500 py-4 px-6 placeholder:text-dark-300 text-dark-200 rounded-lg outline-none border-none font-medium ${
+                      errors.email ? 'border-red-500' : ''
+                    }`}
+                  />
+                </label>
+                {errors?.email && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.email.message}
+                  </p>
+                )}
+              </div>
 
-            {/* Message Field */}
-            <div>
-              <label htmlFor="message" className="flex flex-col">
-                <span className="text-dark-200 font-medium mb-4">Message</span>
+              {/* Message Field */}
+              <div>
+                <label htmlFor="message" className="flex flex-col">
+                  <span className="text-dark-200 font-medium mb-4">
+                    Message
+                  </span>
 
-                <textarea
-                  id="message"
-                  {...register('message')}
-                  placeholder="Enter your message here..."
-                  className={`bg-dark-500 py-4 px-6 placeholder:text-dark-300 text-dark-200 rounded-lg outline-none border-none font-medium ${
-                    errors.message ? 'border-red-500' : ''
-                  }`}
-                  rows={4}
-                />
-              </label>
-              {errors?.message && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.message.message}
-                </p>
-              )}
-            </div>
+                  <textarea
+                    id="message"
+                    {...register('message')}
+                    placeholder="Enter your message here..."
+                    className={`bg-dark-500 py-4 px-6 placeholder:text-dark-300 text-dark-200 rounded-lg outline-none border-none font-medium ${
+                      errors.message ? 'border-red-500' : ''
+                    }`}
+                    rows={4}
+                  />
+                </label>
+                {errors?.message && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.message.message}
+                  </p>
+                )}
+              </div>
 
-            {/* Submit Button */}
-            <button
-              type="submit"
-              className="relative overflow-hidden border-none px-8 py-3 rounded-full font-semibold text-white shadow-md transition-transform duration-300 ease-in-out transform hover:opacity-95 hover:translate-y-[-5px] active:translate-y-0"
-            >
-              <span className="absolute inset-0 z-0 button-gradient rounded-lg" />
-              <span className="relative z-10">
-                {loading ? 'Sending...' : 'Send'}
-              </span>
-            </button>
-          </form>
+              {/* Submit Button */}
+              <button
+                type="submit"
+                className="relative overflow-hidden border-none px-8 py-3 rounded-full font-semibold text-white shadow-md transition-transform duration-300 ease-in-out transform hover:opacity-95 hover:translate-y-[-5px] active:translate-y-0"
+              >
+                <span className="absolute inset-0 z-0 button-gradient rounded-lg" />
+                <span className="relative z-10">
+                  {loading ? 'Sending...' : 'Send'}
+                </span>
+              </button>
+            </form>
+          </motion.div>
         </motion.div>
       </motion.div>
     </section>

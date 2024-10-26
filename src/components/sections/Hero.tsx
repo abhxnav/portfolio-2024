@@ -10,6 +10,7 @@ import Link from 'next/link'
 import { socials } from '@/data'
 import Lottie from 'lottie-react'
 import DesktopAnimation from '@/../public/assets/animations/desktop.json'
+import Image from 'next/image'
 
 const Hero = () => {
   const { ref } = useSectionInView('Home')
@@ -61,12 +62,20 @@ const Hero = () => {
                 variants={fadeIn('right', 'spring', 1.5 + 0.2 * idx, 1)}
                 className="flex gap-2"
               >
-                <Button
-                  key={social.id}
-                  iconSrc={social.iconUrl}
-                  noGradient
-                  className="lg:px-[12px] md:px-[8px] sm:px-[4px] px-[4px] border-2 border-dark-500"
-                />
+                <Link
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="lg:size-14 md:size-9 sm:size-6 size-5 rounded-full border-2 border-dark-500 p-2"
+                >
+                  <Image
+                    src={social.iconUrl}
+                    alt={social.id}
+                    width={1}
+                    height={1}
+                    className="size-full"
+                  />
+                </Link>
               </motion.div>
             ))}
           </motion.div>
