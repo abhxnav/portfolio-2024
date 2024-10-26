@@ -29,7 +29,7 @@ const About = () => {
 
         <motion.p
           variants={fadeIn('up', 'tween', 1.5, 1)}
-          className="mt-4 sm:text-2xl lg:text-3xl text-xl text-justify sm:text-center text-dark-300"
+          className="mt-8 sm:text-2xl lg:text-3xl text-xl text-justify sm:text-center text-dark-300"
           dangerouslySetInnerHTML={{ __html: parseText(aboutText) }}
         />
 

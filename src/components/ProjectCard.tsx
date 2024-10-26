@@ -37,7 +37,7 @@ const ProjectCard = ({
         alt={title}
         width={200}
         height={200}
-        className="absolute w-full h-full object-cover rounded-3xl"
+        className="absolute w-full h-full object-cover lg:rounded-3xl rounded-xl"
       />
 
       {active !== id ? (

@@ -98,7 +98,7 @@ const Hero = () => {
             <Button
               text="Download CV"
               iconSrc={Download}
-              className="bg-transparent outline-2 outline-dark-500 w-full"
+              className="bg-transparent border-2 border-dark-500 w-full"
               noGradient
             />
           </motion.div>

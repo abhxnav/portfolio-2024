@@ -28,7 +28,7 @@ const Projects = () => {
       >
         <TypingEffect title="| Projects" textStyles="text-center" />
 
-        <div className="mt-12 flex lg:flex-row flex-col min-h-[70vh] gap-5">
+        <div className="mt-12 flex lg:flex-row flex-col min-h-[70vh] lg:gap-5 gap-2">
           {projects?.map((project, index) => (
             <ProjectCard
               key={project.id}
