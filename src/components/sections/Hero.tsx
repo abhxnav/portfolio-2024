@@ -17,7 +17,7 @@ const Hero = () => {
 
   return (
     <section
-      className="py-12 sm:py-16 xs:py-8 pl-6 sm:pl-16 text-dark-200 min-h-screen flex items-center justify-center"
+      className="sm:p-16 xs:p-8 pt-0 px-6 py-12 relative z-10 scroll-mt-14 min-h-screen flex items-center justify-center"
       id="home"
       ref={ref}
     >
@@ -31,42 +31,53 @@ const Hero = () => {
         <div className="flex flex-col text-center lg:text-left relative z-10">
           <motion.h3
             variants={textVariant(0.8)}
-            className="font-bold lg:text-4xl md:text-xl sm:text-base text-xs leading-none text-dark-200"
+            className="font-bold sm:text-4xl text-xl leading-none text-dark-200 text-left"
           >
             Hey! I'm
           </motion.h3>
           <motion.h1
             variants={textVariant(1.1)}
-            className="font-bold lg:text-8xl md:text-6xl sm:text-4xl text-3xl uppercase text-dark-200"
+            className="font-bold sm:text-8xl text-6xl uppercase text-dark-200"
           >
             Abhinav,
           </motion.h1>
           <motion.h3
             variants={textVariant(1.4)}
-            className="font-bold lg:text-4xl md:text-xl sm:text-base text-xs leading-none text-dark-200"
+            className="font-bold sm:text-4xl text-xl leading-none text-dark-200 lg:text-left text-right"
           >
             A Software Developer
           </motion.h3>
 
           <motion.div
             variants={textVariant(1.4)}
-            className="lg:mt-4 md:mt-3 sm:mt-3 mt-1 flex gap-2 items-center"
+            className="mt-3 flex sm:gap-2 gap-1 items-center lg:justify-start justify-center"
           >
             <motion.div variants={fadeIn('right', 'spring', 1.5, 1)}>
               <Link href="#contact">
                 <Button text="Get in touch" iconSrc={Send} />
               </Link>
             </motion.div>
+            <motion.div
+              variants={fadeIn('right', 'spring', 1.7, 1)}
+              className="block lg:hidden"
+            >
+              <Button
+                text="Download CV"
+                iconSrc={Download}
+                className="bg-transparent border-2 border-dark-500 w-full"
+                noGradient
+              />
+            </motion.div>
             {socials.map((social, idx) => (
               <motion.div
-                variants={fadeIn('right', 'spring', 1.5 + 0.2 * idx, 1)}
+                variants={fadeIn('right', 'spring', 1.9 + 0.2 * idx, 1)}
                 className="flex gap-2"
               >
                 <Link
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="lg:size-14 md:size-9 sm:size-6 size-5 rounded-full border-2 border-dark-500 p-2"
+                  className="md:size-14 sm:size-[52px] size-8 rounded-full border-2 border-dark-500 sm:p-2 p-1"
                 >
                   <Image
                     src={social.iconUrl}
@@ -82,18 +93,18 @@ const Hero = () => {
 
           <motion.div
             variants={fadeIn('right', 'spring', 2, 1)}
-            className="lg:mt-4 md:mt-3 sm:mt-3 mt-1"
+            className="hidden lg:block mt-4"
           >
             <Button
               text="Download CV"
               iconSrc={Download}
-              className="bg-transparent border-2 border-dark-500 w-full"
+              className="bg-transparent outline-2 outline-dark-500 w-full"
               noGradient
             />
           </motion.div>
         </div>
 
-        <div className="lg:w-1/2 w-3/4">
+        <div className="lg:w-1/2 w-[90%]">
           <motion.div variants={fadeIn('left', 'tween', 0.2, 1)}>
             <Lottie animationData={DesktopAnimation} />
           </motion.div>
