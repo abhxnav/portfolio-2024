@@ -28,14 +28,14 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col">
-          <div className="mb-[50px] h-[2px] bg-white opacity-10" />
+          <div className="sm:mb-[50px] mb-8 h-[2px] bg-white opacity-10" />
 
-          <div className="flex items-center justify-between flex-wrap gap-4">
+          <div className="flex sm:flex-row flex-col sm:items-center sm:justify-between flex-wrap sm:gap-4 gap-2">
             <h4 className="font-extrabold text-2xl text-dark-200">Abhinav</h4>
             <p className="font-normal text-sm text-dark-200">
               Copyright © 2024. All rights reserved.
             </p>
-            <div className="flex gap-4">
+            <div className="flex sm:gap-4 gap-2 sm:mt-0 mt-2">
               {socials.map((social) => (
                 <Image
                   key={social.id}

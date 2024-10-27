@@ -32,9 +32,9 @@ const World = () => {
             <Image
               src="/assets/pictures/map.png"
               alt="map"
-              layout="fill"
-              objectFit="cover"
-              className="absolute inset-0"
+              width={2000}
+              height={2000}
+              className="size-full absolute inset-0 object-cover"
             />
           </div>
 

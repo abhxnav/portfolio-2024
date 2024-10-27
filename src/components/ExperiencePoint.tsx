@@ -36,19 +36,23 @@ const ExperiencePoint = ({
         }`}
       >
         <div className="w-full flex flex-col gap-2 p-4 shadow-lg rounded-md">
-          <p className="font-semibold text-2xl text-dark-200">{role}</p>
-          <div className="flex items-center justify-between">
-            <p className="font-medium text-lg text-dark-200 italic">
+          <p className="font-semibold sm:text-2xl text-xl text-dark-200">
+            {role}
+          </p>
+          <div className="flex sm:flex-row flex-col sm:items-center justify-between">
+            <p className="font-medium sm:text-lg text-base text-dark-200 italic">
               {company}
             </p>
-            <p className="font-normal text-dark-200 italic">{duration}</p>
+            <p className="font-normal sm:text-lg text-sm text-dark-200 italic">
+              {duration}
+            </p>
           </div>
-          <div>
+          <div className="mt-4">
             {description.map((desc, idx) => (
               <div className="flex gap-4" key={idx}>
                 <span className="mt-0.5">&gt;</span>
                 <p
-                  className="font-normal text-lg text-dark-300"
+                  className="font-normal sm:text-lg text-base text-dark-300"
                   dangerouslySetInnerHTML={{ __html: parseText(desc) }}
                 />
               </div>
@@ -71,7 +75,7 @@ const ExperiencePoint = ({
       </div>
 
       {/* Bullet */}
-      <div className="absolute top-0 lg:left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+      <div className="absolute top-0 left-[1.5px] lg:left-1/2 transform -translate-x-1/2 flex flex-col items-center">
         <div className="size-4 lg:size-6 rounded-full border bg-dark-500 border-dark-300 relative z-10">
           <span className="absolute inset-0 z-0 button-gradient rounded-full" />
         </div>

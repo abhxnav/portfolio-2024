@@ -3,77 +3,71 @@
 import { fadeIn } from '@/lib/motion'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { describe } from 'node:test'
 
 interface ProjectCardProps {
-  id: string
   imgUrl: string
   title: string
   description: string
   index: number
-  active: string
-  setActive: (id: string) => void
 }
 
 const ProjectCard = ({
-  id,
   imgUrl,
   title,
   description,
   index,
-  active,
-  setActive,
 }: ProjectCardProps) => {
   return (
     <motion.div
-      variants={fadeIn('right', 'spring', index * 0.5, 0.75)}
-      className={`relative flex items-center justify-center min-w-44 h-[700px] transition-[flex] duration-75 ease-out cursor-pointer ${
-        active === id ? 'lg:flex-[3.5] flex-[10]' : 'lg:flex-[0.5] flex-[2]'
-      }`}
-      onClick={() => setActive(id)}
+      variants={fadeIn(
+        index % 2 === 0 ? 'left' : 'right',
+        'spring',
+        0.5 + index * 0.5,
+        0.75
+      )}
+      className={`bg-dark-600 rounded-3xl z-0 overflow-hidden after:z-10 after:content-[''] after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2 after:rounded-3xl after:outline-dark-500 after:pointer-events-none px-8 pt-8 md:pt-12 md:px-10 lg:pt-16 lg:px-20 sticky`}
+      style={{ top: `calc(100px + ${index * 40}px)` }}
     >
-      <Image
-        src={imgUrl}
-        alt={title}
-        width={200}
-        height={200}
-        className="absolute w-full h-full object-cover rounded-3xl"
-      />
-
-      {active !== id ? (
-        <h3 className="font-semibold sm:text-2xl text-base text-dark-200 absolute z-0 lg:bottom-20 lg:-rotate-90 lg:origin-[0,0]">
-          {title}
-        </h3>
-      ) : (
-        <div className="absolute bottom-0 p-8 justify-start w-full flex-col bg-black bg-opacity-50 rounded-b-3xl">
-          <div className="flex items-center gap-2">
-            <div className="flex justify-center items-center max-w-fit p-3 rounded-2xl frost">
+      <div className="lg:grid lg:grid-cols-2 lg:gap-16">
+        <div className="lg:pb-16">
+          <h3 className="text-2xl md:text-4xl">{title}</h3>
+          <hr className="border-t-2 border-white/5 mt-4 md:mt-5" />
+          <div className="text-sm md:text-base text-dark-300 mt-8">
+            {description}
+          </div>
+          <div className="flex items-center gap-2 w-full mt-8">
+            <div className="flex justify-center items-center w-full md:max-w-fit gap-2 px-4 py-2 font-semibold rounded-xl frost">
+              <span className="text-dark-200">View Live</span>
               <Image
                 src="/assets/icons/link.svg"
-                alt="globe"
-                width={20}
-                height={20}
+                alt="link"
+                width={18}
+                height={18}
                 className="object-contain"
               />
             </div>
-            <div className="flex justify-center items-center max-w-fit p-3 rounded-2xl frost">
+            <div className="flex justify-center items-center w-full md:max-w-fit gap-2 px-4 py-2 font-semibold rounded-xl frost">
+              <span className="text-dark-200">View Code</span>
               <Image
                 src="/assets/icons/github.svg"
-                alt="globe"
-                width={20}
-                height={20}
+                alt="github"
+                width={18}
+                height={18}
                 className="object-contain"
               />
             </div>
           </div>
-          <h2 className="mt-3 font-semibold sm:text-3xl text-2xl text-dark-200">
-            {title}
-          </h2>
-          <p className="mt-2 sm:text-base text-sm text-dark-200">
-            {description}
-          </p>
         </div>
-      )}
+        <div className="realtive">
+          <Image
+            src={imgUrl}
+            alt={title}
+            width={200}
+            height={200}
+            className="size-full mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none rounded-tl-2xl rounded-tr-2xl lg:rounded-tr-none"
+          />
+        </div>
+      </div>
     </motion.div>
   )
 }

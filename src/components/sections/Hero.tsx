@@ -72,6 +72,7 @@ const Hero = () => {
               <motion.div
                 variants={fadeIn('right', 'spring', 1.9 + 0.2 * idx, 1)}
                 className="flex gap-2"
+                key={social.id}
               >
                 <Link
                   href={social.url}
@@ -98,7 +99,7 @@ const Hero = () => {
             <Button
               text="Download CV"
               iconSrc={Download}
-              className="bg-transparent outline-2 outline-dark-500 w-full"
+              className="bg-transparent border-2 border-dark-500 w-full"
               noGradient
             />
           </motion.div>
