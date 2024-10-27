@@ -26,18 +26,14 @@ const Projects = () => {
         viewport={{ once: false, amount: 0.25 }}
         className="flex flex-col lg:w-[80%] w-full mx-auto"
       >
-        <TypingEffect title="| Projects" textStyles="text-center" />
+        <TypingEffect title="| Featured Projects" textStyles="text-center" />
 
-        <div className="mt-12 flex lg:flex-row flex-col min-h-[70vh] lg:gap-5 gap-2">
-          {projects?.map((project, index) => (
-            <ProjectCard
-              key={project.id}
-              {...project}
-              index={index}
-              active={active}
-              setActive={setActive}
-            />
-          ))}
+        <div className="lg:max-w-5xl mx-auto">
+          <div className="mt-12 md:mt-20 flex flex-col gap-10">
+            {projects?.map((project, index) => (
+              <ProjectCard key={project.id} index={index} {...project} />
+            ))}
+          </div>
         </div>
       </motion.div>
     </section>

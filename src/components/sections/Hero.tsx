@@ -72,6 +72,7 @@ const Hero = () => {
               <motion.div
                 variants={fadeIn('right', 'spring', 1.9 + 0.2 * idx, 1)}
                 className="flex gap-2"
+                key={social.id}
               >
                 <Link
                   href={social.url}
