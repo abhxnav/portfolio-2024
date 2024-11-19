@@ -67,3 +67,8 @@ declare interface ISendVerificationCodeParams {
   email: string
   code: string
 }
+
+declare interface IVerifyCodeProps {
+  otp: string
+  setOtp: React.Dispatch<React.SetStateAction<string>>
+}

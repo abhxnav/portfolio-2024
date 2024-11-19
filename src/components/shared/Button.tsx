@@ -24,15 +24,17 @@ const Button = ({
         <span className="absolute inset-0 z-0 button-gradient rounded-lg" />
       )}
       <div className="flex items-center justify-center gap-2">
-        <span className="relative z-10">
-          <Image
-            src={iconSrc!}
-            alt={text || ''}
-            width={28}
-            height={28}
-            className="md:size-7 sm:size-6 size-4"
-          />
-        </span>
+        {iconSrc && (
+          <span className="relative z-10">
+            <Image
+              src={iconSrc!}
+              alt={text || ''}
+              width={28}
+              height={28}
+              className="md:size-7 sm:size-6 size-4"
+            />
+          </span>
+        )}
         {text && (
           <span className="relative z-10 sm:text-base text-xs">{text}</span>
         )}

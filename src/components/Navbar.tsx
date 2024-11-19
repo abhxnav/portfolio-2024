@@ -8,6 +8,7 @@ import { useActiveSectionContext } from '@/context/ActiveSectionContext'
 import { navLinks } from '@/constants'
 import { useState } from 'react'
 import Image from 'next/image'
+import { AdminLoginModal } from '@/components'
 
 const Navbar = () => {
   const { activeSection, setActiveSection } = useActiveSectionContext()
@@ -15,17 +16,15 @@ const Navbar = () => {
 
   return (
     <header className="z-50 relative">
-      <motion.div
-        variants={navVariants}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="hidden sm:flex fixed top-6 left-1/2 h-14 w-[576px] rounded-full border border-dark-500 bg-dark-600 bg-opacity-80 shadow-lg shadow-dark-600 backdrop-blur-[8px]"
-      ></motion.div>
-
       {/* Desktop Navbar */}
-      <nav className="fixed top-9 left-1/2 -translate-x-1/2 hidden sm:block">
-        <ul className="flex gap-5 items-center text-base font-medium text-dark-200">
+      <nav className="fixed top-9 left-[calc(50%-35px)] hidden sm:block">
+        <motion.div
+          className="flex gap-5 items-center text-base font-medium text-dark-200 rounded-full border border-dark-500 bg-dark-600 backdrop-blur-[6px] bg-opacity-80 py-2 px-4"
+          variants={navVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
           {navLinks.map((link, idx) => (
             <motion.li
               variants={navLinkVariants(idx)}
@@ -57,7 +56,27 @@ const Navbar = () => {
               </Link>
             </motion.li>
           ))}
-        </ul>
+        </motion.div>
+      </nav>
+
+      {/* Login Button */}
+      <nav className="fixed top-9 left-[calc(50%+290px)] hidden sm:block">
+        <motion.div
+          className="flex items-center justify-center rounded-full bg-dark-600 border border-dark-500 backdrop-blur-[6px] bg-opacity-80 p-3"
+          variants={navVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <motion.li
+            variants={navLinkVariants(navLinks.length)}
+            initial="hidden"
+            whileInView="show"
+            className="h-3/4 flex items-center justify-center relative"
+          >
+            <AdminLoginModal type="desktop" />
+          </motion.li>
+        </motion.div>
       </nav>
 
       {/* Mobile Navbar */}
@@ -107,6 +126,9 @@ const Navbar = () => {
                   </Link>
                 </li>
               ))}
+              <li>
+                <AdminLoginModal type="mobile" />
+              </li>
             </ul>
           </nav>
         )}

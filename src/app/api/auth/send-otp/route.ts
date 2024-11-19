@@ -2,11 +2,8 @@ import { adminEmail } from '@/constants'
 import dbConnect from '@/lib/dbConnect'
 import { sendVerificationCode } from '@/lib/resend'
 import OTPModel from '@/models/otp.model'
-import { NextApiRequest, NextApiResponse } from 'next'
 
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  if (req.method !== 'POST') return
-
+export const POST = async (req: Request) => {
   await dbConnect()
 
   const email = adminEmail
@@ -17,16 +14,29 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
     const response = await sendVerificationCode({ email, code })
     if (!response.success) throw new Error(response.message)
+    console.log(response)
 
-    return res
-      .status(200)
-      .json({ success: true, message: 'Verification code sent successfully' })
+    return new Response(
+      JSON.stringify({
+        success: true,
+        message: 'Verification code sent successfully',
+      }),
+      {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      }
+    )
   } catch (error) {
     console.error('Error sending verification code: ', error)
-    return res
-      .status(500)
-      .json({ success: false, message: 'Failed to send verification code' })
+    return new Response(
+      JSON.stringify({
+        success: false,
+        message: 'Failed to send verification code',
+      }),
+      {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' },
+      }
+    )
   }
 }
-
-export default handler
