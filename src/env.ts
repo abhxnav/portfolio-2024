@@ -10,5 +10,6 @@ export const env = {
   resend: {
     apiKey: String(process.env.RESEND_API_KEY),
   },
-  jwtSecret: String(process.env.JWT_SECRET),
+  jwtSecret: String(process.env.NEXT_PUBLIC_JWT_SECRET),
+  baseUrl: String(process.env.NEXT_PUBLIC_BASE_URL),
 }

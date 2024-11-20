@@ -10,11 +10,14 @@ export const POST = async (req: Request) => {
   const code = Math.floor(100000 + Math.random() * 900000).toString()
 
   try {
-    await OTPModel.create({ email, code })
+    await OTPModel.updateOne(
+      { email },
+      { code, createdAt: new Date() },
+      { upsert: true }
+    )
 
     const response = await sendVerificationCode({ email, code })
     if (!response.success) throw new Error(response.message)
-    console.log(response)
 
     return new Response(
       JSON.stringify({

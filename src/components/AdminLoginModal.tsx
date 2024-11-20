@@ -17,7 +17,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { z } from 'zod'
 import { adminEmail as adminEmailConstant } from '@/constants'
-import axios from 'axios'
+import { Loader2 } from 'lucide-react'
+import { sendOtp, verifyOtp } from '@/actions/auth.actions'
 
 const emailSchema = z.string().email('Invalid email address')
 const codeSchema = z
@@ -33,21 +34,27 @@ const AdminLoginModal = ({
   const [adminEmail, setAdminEmail] = useState('')
   const [otp, setOtp] = useState('')
   const [error, setError] = useState('')
+  const [modalOpen, setModalOpen] = useState(false)
+  const [loading, setLoading] = useState(false)
 
-  const sendOtp = async () => {
+  const handleSendOtp = async () => {
+    setLoading(true)
+
     try {
       emailSchema.parse(adminEmail)
       setError('')
 
-      if (adminEmail === adminEmailConstant) {
-        const res = await axios.post('/api/auth/send-otp')
-        if (res.status === 200) {
-          setStep('verify')
-        } else {
-          setError(res.data.message)
-        }
-      } else {
+      if (adminEmail !== adminEmailConstant) {
         setError('Invalid admin email')
+        return
+      }
+
+      const resData = await sendOtp()
+
+      if (resData?.success) {
+        setStep('verify')
+      } else {
+        setError(resData?.message)
       }
     } catch (error) {
       if (error instanceof z.ZodError) {
@@ -56,20 +63,24 @@ const AdminLoginModal = ({
         setError('Failed to send the verification code. Please try again.')
         console.error('Failed to send the verification code: ', error)
       }
+    } finally {
+      setLoading(false)
     }
   }
 
-  const verifyOtp = async () => {
+  const handleVerifyOtp = async () => {
+    setLoading(true)
+
     try {
       codeSchema.parse(otp)
       setError('')
 
-      const res = await axios.post('/api/auth/verify-otp', { otp })
-      if (res.status === 200) {
-        localStorage.setItem('token', res.data.token)
+      const resData = await verifyOtp(otp)
+      if (resData?.success) {
         window.open('/admin', '_blank')
+        setModalOpen(false)
       } else {
-        setError(res.data.message)
+        setError(resData?.message)
       }
     } catch (error) {
       if (error instanceof z.ZodError) {
@@ -78,11 +89,13 @@ const AdminLoginModal = ({
         setError('Failed to verify the code. Please try again.')
         console.error('Error verifying otp: ', error)
       }
+    } finally {
+      setLoading(false)
     }
   }
 
   return (
-    <Dialog>
+    <Dialog open={modalOpen} onOpenChange={setModalOpen}>
       <DialogTrigger asChild>
         <Link href="#" className="flex items-center justify-center">
           {type === 'desktop' ? (
@@ -116,8 +129,16 @@ const AdminLoginModal = ({
                 />
                 {error && <p className="text-red-500">{error}</p>}
 
-                <Button variant="default" className="mt-2" onClick={sendOtp}>
-                  Send Verification Code
+                <Button
+                  variant="default"
+                  className="mt-2"
+                  onClick={handleSendOtp}
+                  disabled={loading}
+                >
+                  <div className="flex items-center justify-center gap-2">
+                    {loading && <Loader2 className="animate-spin" />}
+                    <span>Send Verification Code</span>
+                  </div>
                 </Button>
               </div>
             </DialogDescription>
@@ -131,8 +152,15 @@ const AdminLoginModal = ({
                   )}
                 </div>
 
-                <Button variant="default" onClick={verifyOtp}>
-                  Verify
+                <Button
+                  variant="default"
+                  onClick={handleVerifyOtp}
+                  disabled={loading}
+                >
+                  <div className="flex items-center justify-center gap-2">
+                    {loading && <Loader2 className="animate-spin" />}
+                    <span>Login as Admin</span>
+                  </div>
                 </Button>
               </div>
             </DialogDescription>

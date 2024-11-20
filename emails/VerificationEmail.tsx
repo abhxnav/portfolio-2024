@@ -28,7 +28,9 @@ const VerificationEmail = ({ username, otp }: IVerificationEmailProps) => {
       <Preview>Here&apos;s your one time verification code: {otp}</Preview>
       <Section>
         <Row>
-          <Text>{otp}</Text>
+          <Text>
+            Here&apos;s your one time verification code to login as admin: {otp}
+          </Text>
         </Row>
       </Section>
     </Html>

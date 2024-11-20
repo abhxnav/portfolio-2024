@@ -20,6 +20,7 @@
     "emailjs": "^4.0.3",
     "framer-motion": "^11.11.9",
     "input-otp": "^1.4.1",
+    "jose": "^5.9.6",
     "jsonwebtoken": "^9.0.2",
     "lottie-react": "^2.4.0",
     "lucide-react": "^0.460.0",
