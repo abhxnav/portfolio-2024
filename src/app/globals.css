@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --bright-pink: hsl(340deg 76% 70%);
+  --bright-pink: hsl(340, 76%, 70%);
   --soft-pink: hsl(320deg 70% 80%);
   --pale-purple: hsl(290deg 70% 85%);
   --light-blue: hsl(240deg 70% 90%);
@@ -13,19 +13,49 @@
 }
 
 /* Hides scrollbar but allows scrolling */
-html, body {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
+html,
+body {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE 10+ */
 }
 
-html::-webkit-scrollbar, body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, and Edge */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, and Edge */
 }
-
 
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.minimal-scrollbar {
+  scrollbar-width: thin;
+  /* For Firefox */
+  scrollbar-color: #b3b3b3 transparent;
+
+  /* For Webkit-based browsers (Chrome, Edge, Safari) */
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #b3b3b3;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #999999;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
 
 .gradient-main {
   @apply shared-gradient;
@@ -110,6 +140,20 @@ body {
   filter: blur(150px);
 }
 
+.gradient-admin {
+  background: hsla(350, 71%, 80%, 1);
+  background: linear-gradient(315deg, hsla(350, 71%, 80%, 1) 0%, hsla(270, 61%, 75%, 1) 28%, hsla(240, 70%, 70%, 1) 51%, hsla(0, 0%, 5%, 1) 88%);
+  background: -moz-linear-gradient(315deg, hsla(350, 71%, 80%, 1) 0%, hsla(270, 61%, 75%, 1) 28%, hsla(240, 70%, 70%, 1) 51%, hsla(0, 0%, 5%, 1) 88%);
+  background: -webkit-linear-gradient(315deg, hsla(350, 71%, 80%, 1) 0%, hsla(270, 61%, 75%, 1) 28%, hsla(240, 70%, 70%, 1) 51%, hsla(0, 0%, 5%, 1) 88%);
+
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  filter: blur(100px) brightness(0.15);
+}
+
 .frost {
   background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -163,6 +207,7 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -195,6 +240,7 @@ body {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }

@@ -6,6 +6,7 @@ type ButtonProps = {
   className?: string
   iconSrc?: string
   noGradient?: boolean
+  textClassName?: string
 }
 
 const Button = ({
@@ -14,11 +15,12 @@ const Button = ({
   className,
   iconSrc,
   noGradient = false,
+  textClassName,
 }: ButtonProps) => {
   return (
     <button
       onClick={onClick}
-      className={`relative overflow-hidden sm:px-8 sm:py-3 px-3 py-2 rounded-full font-semibold text-white shadow-md transition-transform duration-300 ease-in-out transform hover:opacity-95 hover:translate-y-[-5px] active:translate-y-0 ${className}`}
+      className={`relative overflow-hidden sm:px-8 sm:py-3 px-3 py-2 rounded-full font-semibold text-white shadow-md hover:opacity-75 ${className}`}
     >
       {!noGradient && (
         <span className="absolute inset-0 z-0 button-gradient rounded-lg" />
@@ -36,7 +38,11 @@ const Button = ({
           </span>
         )}
         {text && (
-          <span className="relative z-10 sm:text-base text-xs">{text}</span>
+          <span
+            className={`relative z-10 sm:text-base text-xs ${textClassName}`}
+          >
+            {text}
+          </span>
         )}
       </div>
     </button>

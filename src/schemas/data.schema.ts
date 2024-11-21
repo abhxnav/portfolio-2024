@@ -10,7 +10,7 @@ export const dataSchema = z.object({
       title: z.string(),
       description: z.string(),
       imgUrl: z.string(),
-      tech: z.array(z.string()),
+      tech: z.string(),
       links: z.object({
         live: z.string(),
         code: z.string(),
@@ -22,7 +22,7 @@ export const dataSchema = z.object({
       id: z.string(),
       role: z.string(),
       company: z.string(),
-      description: z.array(z.string()),
+      description: z.string(),
     })
   ),
   skills: z.array(

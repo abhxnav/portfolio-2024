@@ -36,3 +36,16 @@ export {
   InputOTPSlot,
   InputOTPSeparator,
 } from '@/components/ui/input-otp'
+
+export {
+  useFormField,
+  Form,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormDescription,
+  FormMessage,
+  FormField,
+} from '@/components/ui/form'
+
+export { Textarea } from '@/components/ui/textarea'

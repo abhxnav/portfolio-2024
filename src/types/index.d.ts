@@ -1,5 +1,8 @@
 import { navLinks } from '@/constants'
+import { dataSchema } from '@/schemas/data.schema'
 import { Document } from 'mongoose'
+import { Control } from 'react-hook-form'
+import { z } from 'zod'
 
 export type SectionName = (typeof navLinks)[number]['name']
 
@@ -71,4 +74,25 @@ declare interface ISendVerificationCodeParams {
 declare interface IVerifyCodeProps {
   otp: string
   setOtp: React.Dispatch<React.SetStateAction<string>>
+}
+
+declare interface IIFrameComponent {
+  src: string
+  title: string
+}
+
+declare interface ICustomFormField {
+  control: Control<z.infer<typeof dataSchema>>
+  name: string
+  label: string
+  type?: 'input' | 'textarea'
+  placeholder?: string
+  labelClass?: string
+  inputClass?: string
+}
+
+interface IMarkdownEditor {
+  value: string
+  onChange: (value: string) => void
+  className?: string
 }

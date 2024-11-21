@@ -17,3 +17,8 @@ export { default as Button } from '@/components/shared/Button'
 export { default as TypingEffect } from '@/components/shared/TypingEffect'
 export { default as TitleText } from '@/components/shared/TitleText'
 export { default as VerifyCode } from '@/components/shared/VerifyCode'
+export { default as IFrameComponent } from '@/components/shared/IFrameComponent'
+export { default as CustomFormField } from '@/components/shared/CustomFormField'
+export { default as MarkdownEditor } from '@/components/shared/MarkdownEditor'
+
+export { default as AdminDataForm } from '@/components/forms/AdminDataForm'
