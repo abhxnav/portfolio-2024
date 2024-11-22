@@ -3,33 +3,39 @@ export const aboutText = `I'm a Software Developer with 2+ years of experience, 
 export const projects = [
   {
     id: 'project-1',
-    title: 'Project 1',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    imgUrl: '/assets/pictures/project1.jpg',
+    title: 'DocLink',
+    description:
+      'A platform for scheduling, managing, and tracking doctor appointments with real-time updates and complete medical history, eliminating paperwork hassle.',
+    tech: ['NextJs', 'TypeScript', 'TailwindCSS', 'Appwrite'],
+    links: {
+      live: 'https://mydoclink.vercel.app/',
+      code: 'https://github.com/abhxnav/docLink',
+    },
+    imgUrl: '/assets/pictures/doclink.png',
   },
   {
     id: 'project-2',
-    title: 'Project 2',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    imgUrl: '/assets/pictures/project1.jpg',
+    title: 'PicSmith',
+    description:
+      'A freemium model based AI image editor that offers variuos AI tools like Image Restore, Generatve Fill, Object Remove, etc.',
+    tech: ['NextJs', 'TypeScript', 'TailwindCSS', 'Clerk'],
+    links: {
+      live: 'https://picsmith.vercel.app/',
+      code: 'https://github.com/abhxnav/picsmith',
+    },
+    imgUrl: '/assets/pictures/picsmith.png',
   },
   {
     id: 'project-3',
-    title: 'Project 3',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    imgUrl: '/assets/pictures/project1.jpg',
-  },
-  {
-    id: 'project-4',
-    title: 'Project 4',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    imgUrl: '/assets/pictures/project1.jpg',
-  },
-  {
-    id: 'project-5',
-    title: 'Project 5',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    imgUrl: '/assets/pictures/project1.jpg',
+    title: 'FinGlide',
+    description:
+      'A platform to streamline your finances, manage your budget, transfer funds, and track your expenses effortlessly, all in one place.',
+    tech: ['NextJs', 'TypeScript', 'TailwindCSS', 'Appwrite'],
+    links: {
+      live: 'https://finglide.vercel.app/',
+      code: 'https://github.com/abhxnav/finglide',
+    },
+    imgUrl: '/assets/pictures/finglide.png',
   },
 ]
 
@@ -125,3 +131,5 @@ export const socials = [
     iconUrl: '/assets/icons/linkedin.svg',
   },
 ]
+
+export const resume = '/assets/files/resume.pdf'

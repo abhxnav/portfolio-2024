@@ -7,10 +7,11 @@ import Send from '@/../public/assets/icons/send.svg'
 import Download from '@/../public/assets/icons/download.svg'
 import useSectionInView from '@/hooks/useSectionInView'
 import Link from 'next/link'
-import { socials } from '@/data'
+import { resume, socials } from '@/data'
 import Lottie from 'lottie-react'
 import DesktopAnimation from '@/../public/assets/animations/desktop.json'
 import Image from 'next/image'
+import { saveFile } from '@/lib/utils'
 
 const Hero = () => {
   const { ref } = useSectionInView('Home')
@@ -101,6 +102,7 @@ const Hero = () => {
               iconSrc={Download}
               className="bg-transparent border-2 border-dark-500 w-full"
               noGradient
+              onClick={() => saveFile(resume, 'Abhinav_Kashyap_Resume.pdf')}
             />
           </motion.div>
         </div>

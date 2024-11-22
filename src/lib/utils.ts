@@ -1,3 +1,5 @@
+import { saveAs } from 'file-saver'
+
 export const parseText = (text: string) => {
   // Replace **bold** with <span class="font-extrabold">
   const boldParsed = text.replace(
@@ -13,3 +15,5 @@ export const parseText = (text: string) => {
 
   return italicParsed
 }
+
+export const saveFile = (path: string, name: string) => saveAs(path, name)
