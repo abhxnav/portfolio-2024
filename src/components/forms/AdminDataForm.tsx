@@ -121,10 +121,9 @@ const AdminDataForm = () => {
             noGradient
             onClick={() =>
               projectsArray.append({
-                id: '',
                 title: '',
                 description: '',
-                imgUrl: '',
+                projectImg: '',
                 tech: '',
                 links: { live: '', code: '' },
               })
@@ -182,7 +181,6 @@ const AdminDataForm = () => {
             noGradient
             onClick={() =>
               workExpArray.append({
-                id: '',
                 role: '',
                 company: '',
                 description: '',
@@ -230,7 +228,7 @@ const AdminDataForm = () => {
             onClick={() =>
               skillsArray.append({
                 skill: '',
-                iconUrl: '',
+                skillIcon: '',
               })
             }
           />
@@ -276,7 +274,7 @@ const AdminDataForm = () => {
               socialsArray.append({
                 name: '',
                 url: '',
-                iconUrl: '',
+                socialIcon: '',
               })
             }
           />

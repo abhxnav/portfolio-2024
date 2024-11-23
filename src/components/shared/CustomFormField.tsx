@@ -5,11 +5,10 @@ import {
   FormLabel,
   FormMessage,
   Input,
-  Textarea,
 } from '@/components/ui'
 import { ICustomFormField } from '@/types'
 import clsx from 'clsx'
-import { MarkdownEditor } from '@/components'
+import { FileUploader, MarkdownEditor } from '@/components'
 
 const CustomFormField = ({
   control,
@@ -40,6 +39,14 @@ const CustomFormField = ({
             value={field.value || ''}
             onChange={field.onChange}
             className={inputClass}
+          />
+        )
+
+      case 'file':
+        return (
+          <FileUploader
+            file={field.value}
+            onChange={(file) => field.onChange(file)}
           />
         )
     }

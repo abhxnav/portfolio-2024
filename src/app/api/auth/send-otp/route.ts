@@ -12,7 +12,11 @@ export const POST = async (req: Request) => {
   try {
     await OTPModel.updateOne(
       { email },
-      { code, createdAt: new Date() },
+      {
+        code,
+        createdAt: new Date(),
+        expiry: new Date(Date.now() + 10 * 60 * 1000),
+      },
       { upsert: true }
     )
 

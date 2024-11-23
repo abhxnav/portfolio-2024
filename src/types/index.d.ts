@@ -50,6 +50,7 @@ declare interface IOTP extends Document {
   email: string
   code: string
   createdAt: Date
+  expiry: Date
 }
 
 declare interface IConnectionObject {
@@ -85,7 +86,7 @@ declare interface ICustomFormField {
   control: Control<z.infer<typeof dataSchema>>
   name: string
   label: string
-  type?: 'input' | 'textarea'
+  type?: 'input' | 'textarea' | 'file'
   placeholder?: string
   labelClass?: string
   inputClass?: string
@@ -95,4 +96,9 @@ interface IMarkdownEditor {
   value: string
   onChange: (value: string) => void
   className?: string
+}
+
+export interface IFileUploader {
+  file: File | string | null
+  onChange: (file: File | string) => void
 }

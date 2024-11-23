@@ -20,5 +20,6 @@ export { default as VerifyCode } from '@/components/shared/VerifyCode'
 export { default as IFrameComponent } from '@/components/shared/IFrameComponent'
 export { default as CustomFormField } from '@/components/shared/CustomFormField'
 export { default as MarkdownEditor } from '@/components/shared/MarkdownEditor'
+export { default as FileUploader } from '@/components/shared/FileUploader'
 
 export { default as AdminDataForm } from '@/components/forms/AdminDataForm'

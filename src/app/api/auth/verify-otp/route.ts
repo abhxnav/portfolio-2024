@@ -14,7 +14,10 @@ export async function POST(req: Request) {
     const email = adminEmail
 
     const otpEntry = await OTPModel.findOne({ email, code: otp })
-    if (!otpEntry) {
+    if (
+      !otpEntry ||
+      new Date(otpEntry.expiry).getTime() < new Date().getTime()
+    ) {
       return new Response(
         JSON.stringify({ success: false, message: 'Invalid code' }),
         { status: 401, headers: { 'Content-Type': 'application/json' } }

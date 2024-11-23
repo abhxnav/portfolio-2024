@@ -6,10 +6,9 @@ export const dataSchema = z.object({
   aboutText: z.string(),
   projects: z.array(
     z.object({
-      id: z.string(),
       title: z.string(),
       description: z.string(),
-      imgUrl: z.string(),
+      projectImg: z.string(),
       tech: z.string(),
       links: z.object({
         live: z.string(),
@@ -19,7 +18,6 @@ export const dataSchema = z.object({
   ),
   workExp: z.array(
     z.object({
-      id: z.string(),
       role: z.string(),
       company: z.string(),
       description: z.string(),
@@ -28,14 +26,14 @@ export const dataSchema = z.object({
   skills: z.array(
     z.object({
       skill: z.string(),
-      iconUrl: z.string(),
+      skillIcon: z.string(),
     })
   ),
   socials: z.array(
     z.object({
       name: z.string(),
       url: z.string(),
-      iconUrl: z.string(),
+      socialIcon: z.string(),
     })
   ),
 })
