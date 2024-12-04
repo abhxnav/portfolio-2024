@@ -46,9 +46,9 @@ export const workExperience = [
     company: 'ViralFlight',
     duration: 'Apr, 2024 - Present',
     description: [
-      `Worked on multiple projects using **TypeScript**, **ReactJS**, and **NextJS**.`,
-      `Achieved **over 100K impressions** across multiple websites I contributed in.`,
-      `**Collaborated closely with clients** to gather requirements, and contributed to the design and development phases through regular communication.`,
+      `Headed the front-end development of multiple web applications using **TypeScript**, **ReactJS**, and **Next.js**, contributing to over **100K monthly user impressions**.`,
+      `**Collaborated closely with clients** to gather requirements, and contributed to the design and development phases through **regular communication**, improving **client satisfaction by 50%**.`,
+      `Integrated **modern animations** using **Framer Motion**, enhancing user engagement across web platforms.`,
     ],
   },
   {
@@ -57,11 +57,11 @@ export const workExperience = [
     company: 'Sublime Data Systems',
     duration: 'Jan, 2023 - Mar, 2024',
     description: [
-      `Successfully contributed to multiple projects utilizing **TypeScript**, **ReactJS**, and **NextJS**. `,
-      `**Improved application performance by 100%** by eliminating unnecessary API calls through **caching**, **Redux**, and **React Query**.`,
-      `Refactored existing codebases to follow **DRY principles and React best practices**.`,
-      `**Reduced build and deployment times by 80%** by benchmarking different packages, package managers, and bundlers.`,
-      `**Engaged with clients** to define requirements and played a key role in the design and development phases through **consistent communication**.`,
+      `Successfully contributed to multiple projects utilizing **TypeScript**, **ReactJS**, **NextJS**, **VueJS**, and **Svelte**.`,
+      `**Enhanced application performance by 100%** through strategic use of **caching**, **React Query**, and **Redux**, minimizing unnecessary API calls.`,
+      `Streamlined build and deployment processes by **reducing build and deployment times by 80%** by benchmarking different packages, package managers, and bundlers.`,
+      `**Refactored** codebases following **DRY principles** and improved **maintainability** by adhering to **React best practices**.`,
+      `Played a pivotal role in **project delivery** by **engaging with clients** from all over the world, **defining requirements**, and **delivering solutions** within **tight deadlines**.`,
     ],
   },
   {
@@ -100,6 +100,10 @@ export const skills = [
   {
     skill: 'Svelte',
     iconUrl: '/assets/icons/skills/svelte.svg',
+  },
+  {
+    skill: 'Redux',
+    iconUrl: '/assets/icons/skills/redux.svg',
   },
   {
     skill: 'Git',
